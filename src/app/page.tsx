@@ -183,6 +183,45 @@ function SnakeCarousel() {
       >
         {items.map((skill, idx) => {
           const [lang, framework] = skill.split(" – ");
+          function getLangColor(lang: string) {
+            switch (lang) {
+              case "HTML & CSS": return "text-orange-400"; // HTML naranja
+              case "JavaScript": return "text-yellow-300"; // JS amarillo
+              case "Python": return "text-blue-700"; // Python azul
+              case "TypeScript": return "text-blue-500"; // TS azul
+              case "Java": return "text-orange-500"; // Java naranja
+              case "PHP": return "text-indigo-400"; // PHP azul
+              case "C#": return "text-purple-700"; // C# morado
+              case "Go": return "text-cyan-500"; // Go azul claro
+              case "Ruby": return "text-red-600"; // Ruby rojo
+              case "Kotlin": return "text-purple-500"; // Kotlin morado
+              case "Rust": return "text-amber-700"; // Rust marrón
+              case "Dart": return "text-blue-600"; // Dart azul
+              case "Swift": return "text-orange-400"; // Swift naranja
+              default: return "text-cyan-200";
+            }
+          }
+          function getFrameworkColor(framework: string) {
+            switch (framework) {
+              case "React.js": return "text-blue-400"; // #61DAFB
+              case "Django": return "text-green-700"; // #092E20
+              case "Spring Boot": return "text-green-500"; // #6DB33F
+              case "Laravel": return "text-red-500"; // #FF2D20
+              case "Ruby on Rails": return "text-red-600"; // #CC0000
+              case "Next.js": return "text-gray-800"; // #000 (gris oscuro)
+              case "Gin": return "text-cyan-500"; // #00ADD8
+              case "Flutter": return "text-blue-500"; // #02569B
+              case "Jetpack Compose": return "text-blue-400"; // #4285F4
+              case "ASP.NET Core": return "text-purple-700"; // #512BD4
+              case "Ktor": return "text-blue-400"; // #0095D5
+              case "SwiftUI": return "text-orange-400"; // #FA7343
+              case "Java": return "text-orange-500"; // #E76F00
+              case "Actix Web": return "text-gray-600"; // #333
+              case "Rust": return "text-amber-700"; // #DEA584 (marrón)
+              case "PHP": return "text-blue-400"; // #777BB4
+              default: return "text-cyan-300";
+            }
+          }
           return (
             <span
               key={lang + framework + idx}
@@ -194,11 +233,11 @@ function SnakeCarousel() {
                 <span className="absolute left-0 top-0 w-8 h-8 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
                 <span className="relative z-10">{getLangIcon(lang)}</span>
               </span>
-              <span className="text-blue-900 font-bold drop-shadow-lg flex items-center gap-1">
+              <span className={`${getLangColor(lang)} font-bold drop-shadow-lg flex items-center gap-1`}>
                 {lang}
               </span>
               {framework && (
-                <span className="text-blue-500 font-normal flex items-center gap-1">
+                <span className={`${getFrameworkColor(framework)} font-normal flex items-center gap-1 drop-shadow-md`}>
                   – {framework} {getFrameworkIcon(framework)}
                 </span>
               )}
