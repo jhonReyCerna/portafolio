@@ -4,58 +4,151 @@ import React, { useEffect, useRef } from "react";
 
 const skills = [
   "HTML & CSS",
-  "JavaScript",
-  "Python",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Tailwind CSS",
-  "Git & GitHub",
+  "JavaScript – React.js",
+  "Python – Django",
+  "TypeScript – Next.js",
+  "Java – Spring Boot",
+  "PHP – Laravel",
+  "C# – ASP.NET Core",
+  "Go – Gin",
+  "Ruby – Ruby on Rails",
+  "Kotlin – Ktor",
+  "Rust – Actix Web",
+  "Dart – Flutter",
+  "Swift – SwiftUI",
+  "Kotlin – Jetpack Compose",
 ];
 
+function getLangIcon(lang: string) {
+  switch (lang) {
+    case "JavaScript":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#F7DF1E"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#222">JS</text></svg>
+      );
+    case "Python":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#3776AB"/><text x="5" y="23" fontSize="16" fontWeight="bold" fill="#fff">Py</text></svg>
+      );
+    case "TypeScript":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#3178C6"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">TS</text></svg>
+      );
+    case "Java":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#E76F00"/><text x="4" y="23" fontSize="16" fontWeight="bold" fill="#fff">Java</text></svg>
+      );
+    case "PHP":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#777BB4"/><text x="5" y="23" fontSize="16" fontWeight="bold" fill="#fff">PHP</text></svg>
+      );
+    case "C#":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#9B4F96"/><text x="6" y="23" fontSize="16" fontWeight="bold" fill="#fff">C#</text></svg>
+      );
+    case "Go":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#00ADD8"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#fff">Go</text></svg>
+      );
+    case "Ruby":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#CC342D"/><text x="3" y="23" fontSize="16" fontWeight="bold" fill="#fff">Ruby</text></svg>
+      );
+    case "Kotlin":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#7F52FF"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Kt</text></svg>
+      );
+    case "Rust":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#DEA584"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#222">Rust</text></svg>
+      );
+    case "Dart":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#0175C2"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Dart</text></svg>
+      );
+    case "Swift":
+      return (
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#FA7343"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Swift</text></svg>
+      );
+    default:
+      return null;
+  }
+}
+
 function SnakeCarousel() {
-  const trackRef = useRef(null);
-
-  useEffect(() => {
-    const track = trackRef.current as HTMLDivElement | null;
-    if (!track) return;
-    let animationFrame: number;
-    let scrollLeft = 0;
-    const speed = 1.2;
-    function animate() {
-      scrollLeft += speed;
-      if (track && scrollLeft >= track.scrollWidth / 2) scrollLeft = 0;
-      if (track) track.scrollLeft = scrollLeft;
-      animationFrame = window.requestAnimationFrame(animate);
-    }
-    animate();
-    return () => window.cancelAnimationFrame(animationFrame);
-  }, []);
-
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   // Duplicar el array para efecto infinito
   const items = [...skills, ...skills];
+  // Ancho estimado de cada item (ajustar si cambias el diseño)
+  const ITEM_WIDTH = 220; // px
+  const VISIBLE_COUNT = 4;
+  const TOTAL_WIDTH = ITEM_WIDTH * items.length;
+  // Estado para la posición de scroll
+  const [scrollX, setScrollX] = React.useState(0);
+
+  useEffect(() => {
+    let reqId: number;
+    let lastTime = performance.now();
+    function animate() {
+      const now = performance.now();
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+      // Velocidad en px/segundo (ajusta para más rápido/lento)
+      const SPEED = 60;
+      setScrollX((prev) => {
+        let next = prev + SPEED * dt;
+        if (next >= TOTAL_WIDTH / 2) {
+          // Reinicia para bucle infinito
+          return next - TOTAL_WIDTH / 2;
+        }
+        return next;
+      });
+      reqId = requestAnimationFrame(animate);
+    }
+    reqId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(reqId);
+  }, [TOTAL_WIDTH]);
+
   return (
-    <div
-      ref={trackRef}
-      className="flex gap-4 min-w-max py-2 px-2"
-      style={{width: '100%', overflow: 'hidden', scrollBehavior: 'auto'}}
-    >
-      {items.map((skill, idx) => (
-        <span
-          key={idx}
-          className="bg-blue-900/60 text-blue-200 rounded-full px-6 py-3 text-base font-semibold whitespace-nowrap shadow hover:scale-105 transition-transform duration-300"
-        >
-          {skill}
-        </span>
-      ))}
+    <div className="flex items-center w-full justify-center gap-2 overflow-hidden" ref={containerRef} style={{height: '70px'}}>
+      <div
+        ref={scrollRef}
+        className="flex gap-4 py-2 px-2"
+        style={{
+          transform: `translateX(-${scrollX}px)`,
+          transition: 'none',
+          width: TOTAL_WIDTH,
+        }}
+      >
+        {items.map((skill, idx) => {
+          const [lang, framework] = skill.split(" – ");
+          return (
+            <span
+              key={lang + framework + idx}
+              className="bg-blue-900/60 text-blue-200 rounded-full px-6 py-3 text-base font-semibold whitespace-nowrap shadow hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+              style={{ minWidth: ITEM_WIDTH, maxWidth: ITEM_WIDTH }}
+            >
+              {getLangIcon(lang)}
+              <span>{lang}</span>
+              {framework && <span className="text-blue-300 font-normal">– {framework}</span>}
+            </span>
+          );
+        })}
+      </div>
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#18181B] flex flex-col font-sans overflow-hidden text-white">
+    <div className="min-h-screen bg-[#18181B] flex flex-col font-sans overflow-hidden text-white relative">
+      {/* Fondo animado con gradiente y partículas */}
+      <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-tr from-blue-900 via-purple-900 to-blue-700 opacity-80">
+        {/* Partículas decorativas */}
+        <div className="absolute top-20 left-1/4 w-32 h-32 bg-blue-400/30 rounded-full blur-2xl animate-float" />
+        <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-purple-400/30 rounded-full blur-2xl animate-float" />
+        <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-blue-300/20 rounded-full blur-2xl animate-float" />
+      </div>
       {/* Menú de navegación superior elegante */}
       <nav className="w-full bg-[#23232A] shadow-lg fixed top-0 left-0 z-30 border-b border-[#23232A]">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-8 py-4">
@@ -109,49 +202,72 @@ export default function Home() {
         </section>
       </main>
       {/* Sección Sobre mí */}
+
       <section id="about" className="max-w-5xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-extrabold text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text mb-10 text-center drop-shadow-lg">Sobre mí</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Biografía corta */}
-          <div className="bg-[#23232A] rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
-            <span className="mb-4 text-blue-400">
+        <h2 className="text-5xl font-extrabold text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text mb-12 text-center drop-shadow-2xl animate-gradient tracking-tight">
+          <span className="inline-block animate-bounce">Sobre mí</span>
+        </h2>
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Biografía clara y profesional */}
+          <div className="bg-white rounded-3xl shadow-2xl p-10 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300 border border-gray-200">
+            <span className="mb-4 text-blue-500">
               <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
             </span>
-            <h3 className="text-xl font-bold mb-2 text-white">Biografía</h3>
-            <p className="text-gray-300 mb-2">
-              Soy Jhon Cerna Alvarado, desarrollador web full stack enfocado en crear soluciones digitales modernas y funcionales. Me apasiona la innovación, el aprendizaje continuo y el diseño de experiencias que aporten valor real.
+            <h3 className="text-2xl font-bold mb-3 text-gray-900 tracking-tight">Biografía</h3>
+            <p className="text-gray-700 mb-3 text-lg leading-relaxed">
+              Soy <span className="font-semibold text-blue-500">Jhon Cerna Alvarado</span>, desarrollador web full stack enfocado en crear soluciones digitales modernas y funcionales. Me apasiona la innovación, el aprendizaje continuo y el diseño de experiencias que aporten valor real.
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 text-base mb-2">
               Mi objetivo profesional es contribuir al éxito de los proyectos, combinando habilidades técnicas y blandas para lograr resultados sobresalientes.
             </p>
+            <div className="w-16 h-1 bg-blue-100 rounded-full mt-4 mb-2 opacity-80" />
           </div>
           {/* Habilidades blandas */}
-          <div className="bg-[#23232A] rounded-2xl shadow-xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-            <span className="mb-4 text-purple-400">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm-1 2h2v6h-2z"/></svg>
+          <div className="bg-gradient-to-br from-purple-900/80 via-blue-900/70 to-purple-800/80 rounded-3xl shadow-2xl p-10 flex flex-col items-center hover:scale-[1.06] transition-transform duration-300 border-2 border-purple-400/30 backdrop-blur-xl relative animate-fadein">
+            <span className="mb-4 text-purple-400 drop-shadow-xl animate-float">
+              <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24"><defs><radialGradient id="softGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" stopColor="#a78bfa"/><stop offset="100%" stopColor="#60a5fa"/></radialGradient></defs><path fill="url(#softGrad)" d="M12 2C8.13 2 5 5.13 5 9c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm-1 2h2v6h-2z"/></svg>
             </span>
-            <h3 className="text-xl font-bold mb-4 text-white">Habilidades blandas</h3>
-            <div className="flex flex-wrap gap-2 justify-center">
-              <span className="bg-purple-900/60 text-purple-200 rounded-full px-4 py-2 text-sm font-semibold">Trabajo en equipo</span>
-              <span className="bg-purple-900/60 text-purple-200 rounded-full px-4 py-2 text-sm font-semibold">Comunicación</span>
-              <span className="bg-purple-900/60 text-purple-200 rounded-full px-4 py-2 text-sm font-semibold">Liderazgo</span>
-              <span className="bg-purple-900/60 text-purple-200 rounded-full px-4 py-2 text-sm font-semibold">Resolución de problemas</span>
-              <span className="bg-purple-900/60 text-purple-200 rounded-full px-4 py-2 text-sm font-semibold">Adaptabilidad</span>
-              <span className="bg-purple-900/60 text-purple-200 rounded-full px-4 py-2 text-sm font-semibold">Pensamiento crítico</span>
+            <h3 className="text-2xl font-bold mb-3 text-white tracking-tight drop-shadow-lg animate-fadein">Habilidades blandas</h3>
+            <div className="flex flex-wrap gap-3 justify-center mt-2">
+              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5s-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                Trabajo en equipo
+              </span>
+              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6.5a2.5 2.5 0 0 0-5 0V8h-2V6.5a2.5 2.5 0 0 0-5 0V8H7V6.5a2.5 2.5 0 0 0-5 0V8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5z"/></svg>
+                Comunicación
+              </span>
+              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-7.07 17.07c.39.39 1.02.39 1.41 0l1.41-1.41c.39-.39.39-1.02 0-1.41A7.978 7.978 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 2.21-.9 4.21-2.35 5.66-.39.39-.39 1.02 0 1.41l1.41 1.41c.39.39 1.02.39 1.41 0A10 10 0 0 0 12 2z"/></svg>
+                Liderazgo
+              </span>
+              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 8c-2.21 0-4 1.79-4 4v4h8v-4c0-2.21-1.79-4-4-4zm0-6C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10z"/></svg>
+                Resolución de problemas
+              </span>
+              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 1 8 8c0 4.41-3.59 8-8 8s-8-3.59-8-8a8 8 0 0 1 8-8zm0 2C8.13 6 5 9.13 5 13c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7z"/></svg>
+                Adaptabilidad
+              </span>
+              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                Pensamiento crítico
+              </span>
             </div>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400 rounded-full mt-4 mb-2 opacity-80 animate-gradient" />
           </div>
         </div>
         {/* Habilidades técnicas debajo */}
-        <div className="mt-10">
-        <div className="bg-[#23232A] rounded-2xl shadow-xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 w-full max-w-4xl mx-auto">
-            <span className="mb-4 text-blue-400">
+        <div className="mt-12">
+          <div className="bg-blue-50 rounded-3xl shadow-2xl p-10 flex flex-col items-center hover:scale-[1.03] transition-transform duration-300 w-full max-w-4xl mx-auto border border-blue-100">
+            <span className="mb-4 text-blue-500">
               <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M4 17v2h16v-2c0-2.66-5.33-4-8-4s-8 1.34-8 4zm8-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
             </span>
-            <h3 className="text-xl font-bold mb-4 text-white">Habilidades técnicas</h3>
-            {/* Carrusel tipo culebra dinámico */}
+            <h3 className="text-2xl font-bold mb-4 text-gray-900 tracking-tight">Habilidades técnicas</h3>
             <div className="w-full overflow-hidden relative" style={{height: '70px'}}>
               <SnakeCarousel />
             </div>
+            <div className="w-16 h-1 bg-blue-100 rounded-full mt-6 mb-2 opacity-80" />
           </div>
         </div>
       </section>
