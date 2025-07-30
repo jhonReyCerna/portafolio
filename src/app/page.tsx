@@ -1,4 +1,62 @@
 "use client";
+function getFrameworkIcon(framework: string) {
+  switch (framework) {
+    case "React.js":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#61DAFB"/><g><ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2"/><ellipse rx="16" ry="8" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2"/><ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2" transform="rotate(60 16 16)"/><ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2" transform="rotate(120 16 16)"/></g><circle cx="16" cy="16" r="3" fill="#fff"/></svg>
+      );
+    case "Django":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#092E20"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#fff">Dj</text></svg>
+      );
+    case "Next.js":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#fff"/><text x="4" y="23" fontSize="16" fontWeight="bold" fill="#222">Next</text></svg>
+      );
+    case "Spring Boot":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#6DB33F"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Spring</text></svg>
+      );
+    case "Laravel":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#FF2D20"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Laravel</text></svg>
+      );
+    case "ASP.NET Core":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#512BD4"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">.NET</text></svg>
+      );
+    case "Gin":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#00ADD8"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#fff">Gin</text></svg>
+      );
+    case "Ruby on Rails":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#CC0000"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">Rails</text></svg>
+      );
+    case "Ktor":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#0095D5"/><text x="4" y="23" fontSize="16" fontWeight="bold" fill="#fff">Ktor</text></svg>
+      );
+    case "Actix Web":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#333"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">Actix</text></svg>
+      );
+    case "Flutter":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#02569B"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Flutter</text></svg>
+      );
+    case "SwiftUI":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#FA7343"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">SwiftUI</text></svg>
+      );
+    case "Jetpack Compose":
+      return (
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#4285F4"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">Compose</text></svg>
+      );
+    default:
+      return null;
+  }
+}
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
@@ -110,10 +168,13 @@ function SnakeCarousel() {
   }, [TOTAL_WIDTH]);
 
   return (
-    <div className="flex items-center w-full justify-center gap-2 overflow-hidden" ref={containerRef} style={{height: '70px'}}>
+    <div
+      className="relative flex items-center w-full justify-center overflow-hidden" ref={containerRef} style={{ height: '90px' }}>
+      {/* Fondo degradado animado */}
+      <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-40 blur-xl" />
       <div
         ref={scrollRef}
-        className="flex gap-4 py-2 px-2"
+        className="flex gap-6 py-2 px-2"
         style={{
           transform: `translateX(-${scrollX}px)`,
           transition: 'none',
@@ -125,12 +186,22 @@ function SnakeCarousel() {
           return (
             <span
               key={lang + framework + idx}
-              className="bg-blue-900/60 text-blue-200 rounded-full px-6 py-3 text-base font-semibold whitespace-nowrap shadow hover:scale-105 transition-transform duration-300 flex items-center gap-2"
-              style={{ minWidth: ITEM_WIDTH, maxWidth: ITEM_WIDTH }}
+              className="relative bg-white/20 backdrop-blur-md border border-blue-200/30 shadow-2xl rounded-2xl px-4 py-3 text-base font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-pink-400/40 hover:bg-white/30 min-w-fit max-w-fit"
+              style={{ boxSizing: 'border-box', overflow: 'hidden' }}
             >
-              {getLangIcon(lang)}
-              <span>{lang}</span>
-              {framework && <span className="text-blue-300 font-normal">– {framework}</span>}
+              {/* Glow animado en el icono, mejor posicionado */}
+              <span className="relative flex items-center justify-center mr-2" style={{width: 32, height: 32}}>
+                <span className="absolute left-0 top-0 w-8 h-8 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
+                <span className="relative z-10">{getLangIcon(lang)}</span>
+              </span>
+              <span className="text-blue-900 font-bold drop-shadow-lg flex items-center gap-1">
+                {lang}
+              </span>
+              {framework && (
+                <span className="text-blue-500 font-normal flex items-center gap-1">
+                  – {framework} {getFrameworkIcon(framework)}
+                </span>
+              )}
             </span>
           );
         })}
