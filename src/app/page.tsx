@@ -330,15 +330,18 @@ export default function Home() {
         </div>
         {/* Habilidades técnicas debajo */}
         <div className="mt-12">
-          <div className="bg-blue-50 rounded-3xl shadow-2xl p-10 flex flex-col items-center hover:scale-[1.03] transition-transform duration-300 w-full max-w-4xl mx-auto border border-blue-100">
-            <span className="mb-4 text-blue-500">
-              <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M4 17v2h16v-2c0-2.66-5.33-4-8-4s-8 1.34-8 4zm8-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
+          <div className="relative rounded-3xl p-10 flex flex-col items-center w-full max-w-4xl mx-auto border border-blue-200/30 backdrop-blur-xl bg-white/10 shadow-2xl hover:scale-[1.04] transition-transform duration-300">
+            {/* Fondo gradiente animado glassmorphism */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-400/30 via-purple-400/20 to-pink-400/30 opacity-60 blur-xl -z-10" />
+            <span className="mb-4 text-blue-500 drop-shadow-xl animate-float">
+              <svg width="54" height="54" fill="currentColor" viewBox="0 0 24 24"><path d="M4 17v2h16v-2c0-2.66-5.33-4-8-4s-8 1.34-8 4zm8-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
             </span>
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 tracking-tight">Habilidades técnicas</h3>
-            <div className="w-full overflow-hidden relative" style={{height: '70px'}}>
+            <h3 className="text-3xl font-extrabold mb-2 text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-center drop-shadow-2xl animate-gradient tracking-tight">Habilidades técnicas</h3>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full mt-2 mb-6 opacity-80 animate-gradient" />
+            <div className="w-full overflow-hidden relative rounded-2xl border border-blue-200/20 bg-white/20 backdrop-blur-md shadow-lg" style={{height: '90px'}}>
               <SnakeCarousel />
             </div>
-            <div className="w-16 h-1 bg-blue-100 rounded-full mt-6 mb-2 opacity-80" />
+            <div className="w-16 h-1 bg-blue-100 rounded-full mt-8 mb-2 opacity-80" />
           </div>
         </div>
       </section>
