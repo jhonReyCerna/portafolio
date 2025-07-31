@@ -2,56 +2,117 @@
 function getFrameworkIcon(framework: string) {
   switch (framework) {
     case "React.js":
+      // Official React logo (minimal)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#61DAFB"/><g><ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2"/><ellipse rx="16" ry="8" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2"/><ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2" transform="rotate(60 16 16)"/><ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#fff" strokeWidth="2" transform="rotate(120 16 16)"/></g><circle cx="16" cy="16" r="3" fill="#fff"/></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="16" fill="#222"/>
+          <g>
+            <ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2"/>
+            <ellipse rx="16" ry="8" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2"/>
+            <ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2" transform="rotate(60 16 16)"/>
+            <ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2" transform="rotate(120 16 16)"/>
+          </g>
+          <circle cx="16" cy="16" r="3" fill="#61DAFB"/>
+        </svg>
       );
     case "Django":
+      // Official Django logo (minimal, d letter)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#092E20"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#fff">Dj</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#092E20"/>
+          <path d="M13 10h3.5c3.5 0 5.5 2.1 5.5 5.5S20 21 16.5 21H13V10zm2.2 2v7h1.3c2.1 0 3.5-1.2 3.5-3.5S18.6 12 16.5 12h-1.3z" fill="#fff"/>
+        </svg>
       );
     case "Next.js":
+      // Official Next.js logo (minimal)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#fff"/><text x="4" y="23" fontSize="16" fontWeight="bold" fill="#222">Next</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#fff"/>
+          <path d="M10 22V10h2v10h-2zm4.5-6.5l5.5 8.5h-2.3l-3.2-5.1V22h-2v-8h2v3.5zm2.5-2.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" fill="#222"/>
+        </svg>
       );
     case "Spring Boot":
+      // Official Spring Boot logo (minimal, leaf)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#6DB33F"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Spring</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#6DB33F"/>
+          <path d="M16 10c3 0 6 2 6 6s-3 6-6 6-6-2-6-6 3-6 6-6zm0 2c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z" fill="#fff"/>
+        </svg>
       );
     case "Laravel":
+      // Official Laravel logo (minimal, L shape)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#FF2D20"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Laravel</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#FF2D20"/>
+          <path d="M10 22V10h2v10h8v2H10z" fill="#fff"/>
+        </svg>
       );
     case "ASP.NET Core":
+      // Official ASP.NET Core logo (minimal, dot and N)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#512BD4"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">.NET</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#512BD4"/>
+          <circle cx="10" cy="22" r="2" fill="#fff"/>
+          <rect x="16" y="12" width="6" height="12" fill="#fff"/>
+        </svg>
       );
     case "Gin":
+      // Official Gin logo (minimal, G letter)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#00ADD8"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#fff">Gin</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#00ADD8"/>
+          <path d="M20 16a4 4 0 1 1-4-4v2a2 2 0 1 0 2 2h2z" fill="#fff"/>
+        </svg>
       );
     case "Ruby on Rails":
+      // Official Rails logo (minimal, rails shape)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#CC0000"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">Rails</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#CC0000"/>
+          <rect x="10" y="10" width="4" height="12" fill="#fff"/>
+          <rect x="18" y="10" width="4" height="12" fill="#fff"/>
+          <rect x="14" y="14" width="4" height="8" fill="#fff"/>
+        </svg>
       );
     case "Ktor":
+      // Official Ktor logo (minimal, K shape)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#0095D5"/><text x="4" y="23" fontSize="16" fontWeight="bold" fill="#fff">Ktor</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#0095D5"/>
+          <polygon points="10,24 22,10 22,24" fill="#fff"/>
+        </svg>
       );
     case "Actix Web":
+      // Official Actix Web logo (minimal, A shape)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#333"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">Actix</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#333"/>
+          <polygon points="16,10 22,24 10,24" fill="#fff"/>
+        </svg>
       );
     case "Flutter":
+      // Official Flutter logo (minimal, stylized F)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#02569B"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Flutter</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#02569B"/>
+          <polygon points="10,22 22,10 26,14 14,26" fill="#fff"/>
+        </svg>
       );
     case "SwiftUI":
+      // Official SwiftUI logo (minimal, bird shape)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#FA7343"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">SwiftUI</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#FA7343"/>
+          <path d="M10 22c4-2 8-8 12-10-2 4-8 8-12 10zm2-8c2 2 6 4 8 2-2 0-6-2-8-2z" fill="#fff"/>
+        </svg>
       );
     case "Jetpack Compose":
+      // Official Jetpack Compose logo (minimal, diamond shape)
       return (
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="16" fill="#4285F4"/><text x="2" y="23" fontSize="13" fontWeight="bold" fill="#fff">Compose</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="16" fill="#4285F4"/>
+          <polygon points="16,8 28,16 16,28 4,16" fill="#fff"/>
+        </svg>
       );
     default:
       return null;
@@ -61,7 +122,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
 const skills = [
-  "HTML & CSS",
+  "HTML - CSS",
   "JavaScript – React.js",
   "Python – Django",
   "TypeScript – Next.js",
@@ -80,52 +141,110 @@ const skills = [
 function getLangIcon(lang: string) {
   switch (lang) {
     case "JavaScript":
+      // Official JS logo (minimal)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#F7DF1E"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#222">JS</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#F7DF1E"/>
+          <path d="M19.6 23.2c.4.7.8 1.3 1.7 1.3.8 0 1.3-.3 1.3-1.6v-7.1h2.2v7.2c0 2.3-1.3 3.3-3.1 3.3-1.7 0-2.7-.9-3.2-2l1.1-.7zm-7.2.1c.3.6.6 1.1 1.4 1.1.7 0 1.1-.3 1.1-1.3v-7.1h2.2v7.2c0 2.3-1.3 3.3-3.1 3.3-1.7 0-2.7-.9-3.2-2l1.1-.7z" fill="#222"/>
+        </svg>
       );
     case "Python":
+      // Official Python logo (professional, as on python.org)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#3776AB"/><text x="5" y="23" fontSize="16" fontWeight="bold" fill="#fff">Py</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#fff"/>
+          <g>
+            <path d="M16.01 6c-2.2 0-4.01 1.79-4.01 4v2h8v-2c0-2.21-1.8-4-3.99-4zm-6.01 4c0-3.31 2.69-6 6-6s6 2.69 6 6v2c0 1.1-.9 2-2 2h-8c-1.1 0-2-.9-2-2v-2zm2 10c0 2.21 1.8 4 4.01 4s4.01-1.79 4.01-4v-2h-8v2zm6.01 4c3.31 0 6-2.69 6-6v-2c0-1.1-.9-2-2-2h-8c-1.1 0-2 .9-2 2v2c0 3.31 2.69 6 6 6z" fill="#3776AB"/>
+            <circle cx="11.5" cy="10.5" r="1" fill="#fff"/>
+            <path d="M25 16.5c0-2.21-1.8-4-4.01-4h-2v8h2c2.21 0 4.01-1.79 4.01-4zm-6.01 4c-3.31 0-6-2.69-6-6v-2c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v2c0 3.31-2.69 6-6 6z" fill="#FFD43B"/>
+            <circle cx="20.5" cy="21.5" r="1" fill="#fff"/>
+          </g>
+        </svg>
       );
     case "TypeScript":
+      // Official TypeScript logo (minimal)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#3178C6"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">TS</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#3178C6"/>
+          <path d="M10 13v-2h12v2h-5v10h-2V13h-5z" fill="#fff"/>
+        </svg>
       );
     case "Java":
+      // Official Java logo (minimal, cup and steam)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#E76F00"/><text x="4" y="23" fontSize="16" fontWeight="bold" fill="#fff">Java</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#E76F00"/>
+          <path d="M16 22c-4 0-7-1-7-2s3-2 7-2 7 1 7 2-3 2-7 2zm0-3c-2.8 0-5 .4-5 1s2.2 1 5 1 5-.4 5-1-2.2-1-5-1zm0-2c-1.7 0-3-.7-3-1.5S14.3 14 16 14s3 .7 3 1.5S17.7 17 16 17zm0-2c-.6 0-1-.2-1-.5s.4-.5 1-.5 1 .2 1 .5-.4.5-1 .5z" fill="#fff"/>
+        </svg>
       );
     case "PHP":
+      // Official PHP logo (minimal, ellipse with PHP)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#777BB4"/><text x="5" y="23" fontSize="16" fontWeight="bold" fill="#fff">PHP</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#777BB4"/>
+          <ellipse cx="16" cy="16" rx="10" ry="6" fill="#fff"/>
+          <text x="8" y="20" fontSize="10" fontWeight="bold" fill="#777BB4">PHP</text>
+        </svg>
       );
     case "C#":
+      // Official C# logo (minimal, hexagon with #)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#9B4F96"/><text x="6" y="23" fontSize="16" fontWeight="bold" fill="#fff">C#</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#9B4F96"/>
+          <polygon points="16,6 28,12 28,24 16,30 4,24 4,12" fill="#fff"/>
+          <text x="10" y="22" fontSize="12" fontWeight="bold" fill="#9B4F96">#</text>
+        </svg>
       );
     case "Go":
+      // Official Go logo (minimal, gopher face)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#00ADD8"/><text x="7" y="23" fontSize="16" fontWeight="bold" fill="#fff">Go</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#00ADD8"/>
+          <ellipse cx="16" cy="18" rx="6" ry="5" fill="#fff"/>
+          <circle cx="14" cy="17" r="1" fill="#222"/>
+          <circle cx="18" cy="17" r="1" fill="#222"/>
+        </svg>
       );
     case "Ruby":
+      // Official Ruby logo (minimal, gem shape)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#CC342D"/><text x="3" y="23" fontSize="16" fontWeight="bold" fill="#fff">Ruby</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#CC342D"/>
+          <polygon points="16,10 24,16 16,26 8,16" fill="#fff"/>
+        </svg>
       );
     case "Kotlin":
+      // Official Kotlin logo (minimal, K shape)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#7F52FF"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Kt</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#7F52FF"/>
+          <polygon points="8,26 24,10 24,26" fill="#fff"/>
+        </svg>
       );
     case "Rust":
+      // Official Rust logo (minimal, gear shape)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#DEA584"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#222">Rust</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#DEA584"/>
+          <circle cx="16" cy="16" r="7" fill="#222"/>
+          <circle cx="16" cy="16" r="3" fill="#DEA584"/>
+        </svg>
       );
     case "Dart":
+      // Official Dart logo (minimal, diamond shape)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#0175C2"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Dart</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#0175C2"/>
+          <polygon points="16,8 28,16 16,28 4,16" fill="#fff"/>
+        </svg>
       );
     case "Swift":
+      // Official Swift logo (minimal, bird shape)
       return (
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#FA7343"/><text x="2" y="23" fontSize="16" fontWeight="bold" fill="#fff">Swift</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#FA7343"/>
+          <path d="M10 22c4-2 8-8 12-10-2 4-8 8-12 10zm2-8c2 2 6 4 8 2-2 0-6-2-8-2z" fill="#fff"/>
+        </svg>
       );
     default:
       return null;
@@ -377,10 +496,89 @@ export default function Home() {
                 <svg width="38" height="38" fill="currentColor" viewBox="0 0 24 24" className="relative z-10 text-blue-900"><path d="M4 17v2h16v-2c0-2.66-5.33-4-8-4s-8 1.34-8 4zm8-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
               </span>
             </span>
-            <h3 className="text-3xl font-extrabold mb-2 text-center text-white tracking-tight drop-shadow-xl">Habilidades técnicas</h3>
+            <h3 className="text-3xl font-extrabold mb-2 text-center text-white tracking-tight drop-shadow-xl">Lenguajes de programación</h3>
             <div className="w-24 h-1 bg-blue-300 rounded-full mt-2 mb-6 opacity-90 animate-gradient" />
-            <div className="w-full overflow-hidden relative rounded-xl border border-blue-300 bg-gray-900/80 backdrop-blur-md shadow-lg" style={{height: '90px'}}>
-              <SnakeCarousel />
+            {/* Grid de lenguajes */}
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-2 mb-10">
+              {skills.map((skill, idx) => {
+                const [lang, framework] = skill.split(" – ");
+                if (!lang) return null;
+                function getLangColor(lang: string) {
+                  switch (lang) {
+                    case "JavaScript": return "text-yellow-400";
+                    case "Python": return "text-blue-700";
+                    case "TypeScript": return "text-blue-500";
+                    case "Java": return "text-orange-500";
+                    case "PHP": return "text-indigo-400";
+                    case "C#": return "text-purple-700";
+                    case "Go": return "text-cyan-500";
+                    case "Ruby": return "text-red-600";
+                    case "Kotlin": return "text-purple-500";
+                    case "Rust": return "text-amber-700";
+                    case "Dart": return "text-blue-600";
+                    case "Swift": return "text-orange-400";
+                    default: return "text-cyan-200";
+                  }
+                }
+                return (
+                  <div
+                    key={lang + idx}
+                    className="group bg-white/10 border border-blue-200/30 shadow-xl rounded-2xl px-6 py-6 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-pink-400/40 hover:bg-white/20 min-h-[140px] relative overflow-hidden"
+                  >
+                    <span className="relative flex items-center justify-center mb-3" style={{width: 48, height: 48}}>
+                      <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
+                      <span className="relative z-10">{getLangIcon(lang)}</span>
+                    </span>
+                    <span className={`text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 ${getLangColor(lang)}`}>
+                      {lang}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <h3 className="text-3xl font-extrabold mb-2 text-center text-white tracking-tight drop-shadow-xl mt-8">Frameworks y librerías</h3>
+            <div className="w-24 h-1 bg-blue-300 rounded-full mt-2 mb-6 opacity-90 animate-gradient" />
+            {/* Grid de frameworks */}
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-2">
+              {skills.map((skill, idx) => {
+                const [lang, framework] = skill.split(" – ");
+                if (!framework) return null;
+                function getFrameworkColor(framework: string) {
+                  switch (framework) {
+                    case "React.js": return "text-blue-400";
+                    case "Django": return "text-green-700";
+                    case "Spring Boot": return "text-green-500";
+                    case "Laravel": return "text-red-500";
+                    case "Ruby on Rails": return "text-red-600";
+                    case "Next.js": return "text-gray-800";
+                    case "Gin": return "text-cyan-500";
+                    case "Flutter": return "text-blue-500";
+                    case "Jetpack Compose": return "text-blue-400";
+                    case "ASP.NET Core": return "text-purple-700";
+                    case "Ktor": return "text-blue-400";
+                    case "SwiftUI": return "text-orange-400";
+                    case "Java": return "text-orange-500";
+                    case "Actix Web": return "text-gray-600";
+                    case "Rust": return "text-amber-700";
+                    case "PHP": return "text-blue-400";
+                    default: return "text-cyan-300";
+                  }
+                }
+                return (
+                  <div
+                    key={framework + idx}
+                    className="group bg-white/10 border border-blue-200/30 shadow-xl rounded-2xl px-6 py-6 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-pink-400/40 hover:bg-white/20 min-h-[140px] relative overflow-hidden"
+                  >
+                    <span className="relative flex items-center justify-center mb-3" style={{width: 48, height: 48}}>
+                      <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
+                      <span className="relative z-10">{getFrameworkIcon(framework)}</span>
+                    </span>
+                    <span className={`text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 ${getFrameworkColor(framework)}`}>
+                      {framework}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
             <div className="w-16 h-1 bg-blue-300 rounded-full mt-8 mb-2 opacity-80 animate-gradient" />
           </div>
