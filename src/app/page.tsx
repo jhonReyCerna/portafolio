@@ -129,18 +129,12 @@ const skills = [
   "Java – Spring Boot",
   "PHP – Laravel",
   "C# – ASP.NET Core",
-  "Go – Gin",
-  "Ruby – Ruby on Rails",
-  "Kotlin – Ktor",
-  "Rust – Actix Web",
   "Dart – Flutter",
-  "Swift – SwiftUI",
   "Kotlin – Jetpack Compose",
 ];
 
 function getLangIcon(lang: string) {
-  // Todas las imágenes deben estar en public/img/ con nombre en minúsculas y sin caracteres especiales (ej: js.webp, python.webp, typescript.webp, java.webp, php.webp, csharp.webp, go.webp, ruby.webp, kotlin.webp, rust.webp, dart.webp, swift.webp)
-  // Mapeo de nombre de lenguaje a nombre de archivo y color de fondo
+
   const langMap: Record<string, { file: string; bg: string }> = {
     "JavaScript": { file: "js.webp", bg: "#F7DF1E" },
     "Python": { file: "python.png", bg: "#3776AB" },
@@ -148,12 +142,8 @@ function getLangIcon(lang: string) {
     "Java": { file: "javaaa.png", bg: "#007396" },
     "PHP": { file: "php.png", bg: "#777BB4" },
     "C#": { file: "c.jpg", bg: "#512BD4" },
-    "Go": { file: "go.webp", bg: "#00ADD8" },
-    "Ruby": { file: "ruby.webp", bg: "#CC342D" },
     "Kotlin": { file: "kotlin.webp", bg: "#7F52FF" },
-    "Rust": { file: "rust.webp", bg: "#DEA584" },
     "Dart": { file: "dart.webp", bg: "#0175C2" },
-    "Swift": { file: "swift.webp", bg: "#FA7343" },
   };
   const info = langMap[lang];
   if (!info) return null;
