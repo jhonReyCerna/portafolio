@@ -139,116 +139,34 @@ const skills = [
 ];
 
 function getLangIcon(lang: string) {
-  switch (lang) {
-    case "JavaScript":
-      // Official JS logo (minimal)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#F7DF1E"/>
-          <path d="M19.6 23.2c.4.7.8 1.3 1.7 1.3.8 0 1.3-.3 1.3-1.6v-7.1h2.2v7.2c0 2.3-1.3 3.3-3.1 3.3-1.7 0-2.7-.9-3.2-2l1.1-.7zm-7.2.1c.3.6.6 1.1 1.4 1.1.7 0 1.1-.3 1.1-1.3v-7.1h2.2v7.2c0 2.3-1.3 3.3-3.1 3.3-1.7 0-2.7-.9-3.2-2l1.1-.7z" fill="#222"/>
-        </svg>
-      );
-    case "Python":
-      // Official Python logo (professional, as on python.org)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#fff"/>
-          <g>
-            <path d="M16.01 6c-2.2 0-4.01 1.79-4.01 4v2h8v-2c0-2.21-1.8-4-3.99-4zm-6.01 4c0-3.31 2.69-6 6-6s6 2.69 6 6v2c0 1.1-.9 2-2 2h-8c-1.1 0-2-.9-2-2v-2zm2 10c0 2.21 1.8 4 4.01 4s4.01-1.79 4.01-4v-2h-8v2zm6.01 4c3.31 0 6-2.69 6-6v-2c0-1.1-.9-2-2-2h-8c-1.1 0-2 .9-2 2v2c0 3.31 2.69 6 6 6z" fill="#3776AB"/>
-            <circle cx="11.5" cy="10.5" r="1" fill="#fff"/>
-            <path d="M25 16.5c0-2.21-1.8-4-4.01-4h-2v8h2c2.21 0 4.01-1.79 4.01-4zm-6.01 4c-3.31 0-6-2.69-6-6v-2c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v2c0 3.31-2.69 6-6 6z" fill="#FFD43B"/>
-            <circle cx="20.5" cy="21.5" r="1" fill="#fff"/>
-          </g>
-        </svg>
-      );
-    case "TypeScript":
-      // Official TypeScript logo (minimal)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#3178C6"/>
-          <path d="M10 13v-2h12v2h-5v10h-2V13h-5z" fill="#fff"/>
-        </svg>
-      );
-    case "Java":
-      // Official Java logo (minimal, cup and steam)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#E76F00"/>
-          <path d="M16 22c-4 0-7-1-7-2s3-2 7-2 7 1 7 2-3 2-7 2zm0-3c-2.8 0-5 .4-5 1s2.2 1 5 1 5-.4 5-1-2.2-1-5-1zm0-2c-1.7 0-3-.7-3-1.5S14.3 14 16 14s3 .7 3 1.5S17.7 17 16 17zm0-2c-.6 0-1-.2-1-.5s.4-.5 1-.5 1 .2 1 .5-.4.5-1 .5z" fill="#fff"/>
-        </svg>
-      );
-    case "PHP":
-      // Official PHP logo (minimal, ellipse with PHP)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#777BB4"/>
-          <ellipse cx="16" cy="16" rx="10" ry="6" fill="#fff"/>
-          <text x="8" y="20" fontSize="10" fontWeight="bold" fill="#777BB4">PHP</text>
-        </svg>
-      );
-    case "C#":
-      // Official C# logo (minimal, hexagon with #)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#9B4F96"/>
-          <polygon points="16,6 28,12 28,24 16,30 4,24 4,12" fill="#fff"/>
-          <text x="10" y="22" fontSize="12" fontWeight="bold" fill="#9B4F96">#</text>
-        </svg>
-      );
-    case "Go":
-      // Official Go logo (minimal, gopher face)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#00ADD8"/>
-          <ellipse cx="16" cy="18" rx="6" ry="5" fill="#fff"/>
-          <circle cx="14" cy="17" r="1" fill="#222"/>
-          <circle cx="18" cy="17" r="1" fill="#222"/>
-        </svg>
-      );
-    case "Ruby":
-      // Official Ruby logo (minimal, gem shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#CC342D"/>
-          <polygon points="16,10 24,16 16,26 8,16" fill="#fff"/>
-        </svg>
-      );
-    case "Kotlin":
-      // Official Kotlin logo (minimal, K shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#7F52FF"/>
-          <polygon points="8,26 24,10 24,26" fill="#fff"/>
-        </svg>
-      );
-    case "Rust":
-      // Official Rust logo (minimal, gear shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#DEA584"/>
-          <circle cx="16" cy="16" r="7" fill="#222"/>
-          <circle cx="16" cy="16" r="3" fill="#DEA584"/>
-        </svg>
-      );
-    case "Dart":
-      // Official Dart logo (minimal, diamond shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#0175C2"/>
-          <polygon points="16,8 28,16 16,28 4,16" fill="#fff"/>
-        </svg>
-      );
-    case "Swift":
-      // Official Swift logo (minimal, bird shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#FA7343"/>
-          <path d="M10 22c4-2 8-8 12-10-2 4-8 8-12 10zm2-8c2 2 6 4 8 2-2 0-6-2-8-2z" fill="#fff"/>
-        </svg>
-      );
-    default:
-      return null;
-  }
+  // Todas las imágenes deben estar en public/img/ con nombre en minúsculas y sin caracteres especiales (ej: js.webp, python.webp, typescript.webp, java.webp, php.webp, csharp.webp, go.webp, ruby.webp, kotlin.webp, rust.webp, dart.webp, swift.webp)
+  // Mapeo de nombre de lenguaje a nombre de archivo y color de fondo
+  const langMap: Record<string, { file: string; bg: string }> = {
+    "JavaScript": { file: "js.webp", bg: "#F7DF1E" },
+    "Python": { file: "python.png", bg: "#3776AB" },
+    "TypeScript": { file: "tsss.png", bg: "#3178C6" },
+    "Java": { file: "javaaa.png", bg: "#007396" },
+    "PHP": { file: "php.png", bg: "#777BB4" },
+    "C#": { file: "c.jpg", bg: "#512BD4" },
+    "Go": { file: "go.webp", bg: "#00ADD8" },
+    "Ruby": { file: "ruby.webp", bg: "#CC342D" },
+    "Kotlin": { file: "kotlin.webp", bg: "#7F52FF" },
+    "Rust": { file: "rust.webp", bg: "#DEA584" },
+    "Dart": { file: "dart.webp", bg: "#0175C2" },
+    "Swift": { file: "swift.webp", bg: "#FA7343" },
+  };
+  const info = langMap[lang];
+  if (!info) return null;
+  return (
+    <Image
+      src={`/img/${info.file}`}
+      alt={`${lang} Logo`}
+      width={44}
+      height={44}
+      style={{ borderRadius: '50%', background: info.bg }}
+      priority
+    />
+  );
 }
 
 function SnakeCarousel() {
