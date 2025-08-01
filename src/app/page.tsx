@@ -15,12 +15,13 @@ function getFrameworkIcon(framework: string) {
           <circle cx="16" cy="16" r="3" fill="#61DAFB"/>
         </svg>
       );
-    case "Django":
-      // Official Django logo (minimal, d letter)
+    case "Flask":
+      // Official Flask logo (minimal, flask shape)
       return (
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#092E20"/>
-          <path d="M13 10h3.5c3.5 0 5.5 2.1 5.5 5.5S20 21 16.5 21H13V10zm2.2 2v7h1.3c2.1 0 3.5-1.2 3.5-3.5S18.6 12 16.5 12h-1.3z" fill="#fff"/>
+          <rect width="32" height="32" rx="16" fill="#000"/>
+          <path d="M20 10c-2 2-6 8-8 10 2 0 8-6 10-8-1-1-1-2-2-2z" fill="#fff"/>
+          <circle cx="12" cy="22" r="2" fill="#fff"/>
         </svg>
       );
     case "Next.js":
@@ -124,7 +125,7 @@ import React, { useEffect, useRef } from "react";
 const skills = [
   // "HTML - CSS", // Eliminado por solicitud
   "JavaScript – React.js",
-  "Python – Django",
+  "Python – Flask",
   "TypeScript – Next.js",
   "Java – Spring Boot",
   "PHP – Laravel",
@@ -231,7 +232,7 @@ function SnakeCarousel() {
           function getFrameworkColor(framework: string) {
             switch (framework) {
               case "React.js": return "text-blue-400"; // #61DAFB
-              case "Django": return "text-green-700"; // #092E20
+              case "Flask": return "text-gray-200"; // Flask blanco/gris
               case "Spring Boot": return "text-green-500"; // #6DB33F
               case "Laravel": return "text-red-500"; // #FF2D20
               case "Ruby on Rails": return "text-red-600"; // #CC0000
@@ -491,7 +492,7 @@ export default function Home() {
                 function getFrameworkColor(framework: string) {
                   switch (framework) {
                     case "React.js": return "text-blue-400";
-                    case "Django": return "text-green-700";
+                    case "Flask": return "text-gray-200";
                     case "Spring Boot": return "text-green-500";
                     case "Laravel": return "text-red-500";
                     case "Ruby on Rails": return "text-red-600";
