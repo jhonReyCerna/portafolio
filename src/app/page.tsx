@@ -309,7 +309,7 @@ export default function Home() {
                     <Image src="/img/html.jpg" alt="HTML Logo" width={44} height={44} style={{ borderRadius: '50%', background: '#E44D26' }} priority />
                   </span>
                 </span>
-                <span className="text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 text-orange-400">
+                <span className="text-lg font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)] text-white flex items-center gap-1 mb-1">
                   HTML
                 </span>
               </div>
@@ -321,7 +321,7 @@ export default function Home() {
                     <Image src="/img/css.png" alt="CSS Logo" width={44} height={44} style={{ borderRadius: '50%', background: '#1572B6' }} priority />
                   </span>
                 </span>
-                <span className="text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 text-cyan-300">
+                <span className="text-lg font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)] text-white flex items-center gap-1 mb-1">
                   CSS
                 </span>
               </div>
