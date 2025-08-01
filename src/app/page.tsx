@@ -411,7 +411,7 @@ export default function Home() {
                 <span className="relative flex items-center justify-center mb-3" style={{width: 48, height: 48}}>
                   <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-orange-400 via-cyan-400 to-yellow-400 blur-md opacity-30 animate-pulse" />
                   <span className="relative z-10">
-                    <Image src="/img/html.png" alt="HTML Logo" width={44} height={44} style={{ borderRadius: '50%', background: '#E44D26' }} priority />
+                    <Image src="/img/html.jpg" alt="HTML Logo" width={44} height={44} style={{ borderRadius: '50%', background: '#E44D26' }} priority />
                   </span>
                 </span>
                 <span className="text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 text-orange-400">
