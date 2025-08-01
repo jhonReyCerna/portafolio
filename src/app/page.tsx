@@ -396,20 +396,20 @@ export default function Home() {
         </div>
         {/* Sección especial para HTML y CSS */}
         <div className="mt-12">
-          <div className="relative rounded-3xl p-10 flex flex-col items-center w-full max-w-4xl mx-auto border-2 border-pink-300 bg-gradient-to-b from-pink-900 via-gray-800 to-blue-900 shadow-[0_8px_32px_0_rgba(236,72,153,0.10)] hover:scale-[1.03] transition-transform duration-300 mb-10">
+          <div className="relative rounded-3xl p-10 flex flex-col items-center w-full max-w-4xl mx-auto border-2 border-cyan-400 bg-gradient-to-b from-cyan-900 via-gray-800 to-blue-900 shadow-[0_8px_32px_0_rgba(34,211,238,0.10)] hover:scale-[1.03] transition-transform duration-300 mb-10">
             <span className="mb-4 flex items-center justify-center">
-              <span className="relative flex items-center justify-center w-16 h-16 rounded-full bg-pink-300 shadow-lg animate-pulse">
-                <span className="absolute w-16 h-16 rounded-full bg-pink-500/40 blur-xl opacity-40 animate-pulse" />
-                <svg width="38" height="38" fill="currentColor" viewBox="0 0 24 24" className="relative z-10 text-pink-900"><path d="M4 17v2h16v-2c0-2.66-5.33-4-8-4s-8 1.34-8 4zm8-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
+              <span className="relative flex items-center justify-center w-16 h-16 rounded-full bg-cyan-300 shadow-lg animate-pulse">
+                <span className="absolute w-16 h-16 rounded-full bg-cyan-400/40 blur-xl opacity-40 animate-pulse" />
+                <svg width="38" height="38" fill="currentColor" viewBox="0 0 24 24" className="relative z-10 text-cyan-400"><path d="M4 17v2h16v-2c0-2.66-5.33-4-8-4s-8 1.34-8 4zm8-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
               </span>
             </span>
-            <h3 className="text-3xl font-extrabold mb-2 text-center text-white tracking-tight drop-shadow-xl">Tecnologías base</h3>
-            <div className="w-24 h-1 bg-pink-300 rounded-full mt-2 mb-6 opacity-90 animate-gradient" />
+            <h3 className="text-3xl font-extrabold mb-2 text-center text-cyan-300 tracking-tight drop-shadow-xl">Tecnologías base</h3>
+            <div className="w-24 h-1 bg-cyan-300 rounded-full mt-2 mb-6 opacity-90 animate-gradient" />
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2 mb-2">
               {/* Card HTML */}
-              <div className="group bg-white/10 border border-pink-200/30 shadow-xl rounded-2xl px-6 py-6 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-pink-400/40 hover:bg-white/20 min-h-[140px] relative overflow-hidden">
+              <div className="group bg-white/10 border border-cyan-200/30 shadow-xl rounded-2xl px-6 py-6 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-cyan-400/40 hover:bg-white/20 min-h-[140px] relative overflow-hidden">
                 <span className="relative flex items-center justify-center mb-3" style={{width: 48, height: 48}}>
-                  <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-orange-400 via-pink-400 to-yellow-400 blur-md opacity-30 animate-pulse" />
+                  <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-orange-400 via-cyan-400 to-yellow-400 blur-md opacity-30 animate-pulse" />
                   <span className="relative z-10">
                     <Image src="/img/html.png" alt="HTML Logo" width={44} height={44} style={{ borderRadius: '50%', background: '#E44D26' }} priority />
                   </span>
@@ -419,19 +419,19 @@ export default function Home() {
                 </span>
               </div>
               {/* Card CSS */}
-              <div className="group bg-white/10 border border-pink-200/30 shadow-xl rounded-2xl px-6 py-6 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-pink-400/40 hover:bg-white/20 min-h-[140px] relative overflow-hidden">
+              <div className="group bg-white/10 border border-cyan-200/30 shadow-xl rounded-2xl px-6 py-6 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-cyan-400/40 hover:bg-white/20 min-h-[140px] relative overflow-hidden">
                 <span className="relative flex items-center justify-center mb-3" style={{width: 48, height: 48}}>
-                  <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 via-pink-400 to-cyan-400 blur-md opacity-30 animate-pulse" />
+                  <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 via-cyan-400 to-cyan-200 blur-md opacity-30 animate-pulse" />
                   <span className="relative z-10">
                     <Image src="/img/css.png" alt="CSS Logo" width={44} height={44} style={{ borderRadius: '50%', background: '#1572B6' }} priority />
                   </span>
                 </span>
-                <span className="text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 text-blue-400">
+                <span className="text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 text-cyan-300">
                   CSS
                 </span>
               </div>
             </div>
-            <div className="w-16 h-1 bg-pink-300 rounded-full mt-8 mb-2 opacity-80 animate-gradient" />
+            <div className="w-16 h-1 bg-cyan-300 rounded-full mt-8 mb-2 opacity-80 animate-gradient" />
           </div>
           <div className="relative rounded-3xl p-10 flex flex-col items-center w-full max-w-4xl mx-auto border-2 border-blue-300 bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 shadow-[0_8px_32px_0_rgba(59,130,246,0.10)] hover:scale-[1.03] transition-transform duration-300">
             {/* Fondo gris oscuro con gradiente azul y sombra azul */}
