@@ -142,8 +142,8 @@ function getLangIcon(lang: string) {
     "Java": { file: "javaaa.png", bg: "#007396" },
     "PHP": { file: "php.png", bg: "#777BB4" },
     "C#": { file: "c.jpg", bg: "#512BD4" },
-    "Kotlin": { file: "kotlin.webp", bg: "#7F52FF" },
-    "Dart": { file: "dart.webp", bg: "#0175C2" },
+    "Kotlin": { file: "kotlin.jpg", bg: "#7F52FF" },
+    "Dart": { file: "dart.png", bg: "#0175C2" },
   };
   const info = langMap[lang];
   if (!info) return null;
