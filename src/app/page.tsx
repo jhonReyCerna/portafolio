@@ -114,43 +114,31 @@ function SnakeCarousel() {
       >
         {items.map((skill, idx) => {
           const [lang, framework] = skill.split(" – ");
+          // Mejor contraste: texto claro para fondos oscuros, texto oscuro para fondos claros
           function getLangColor(lang: string) {
             switch (lang) {
-              case "HTML & CSS": return "text-orange-400"; // HTML naranja
-              case "JavaScript": return "text-yellow-300"; // JS amarillo
-              case "Python": return "text-blue-700"; // Python azul
-              case "TypeScript": return "text-blue-500"; // TS azul
-              case "Java": return "text-orange-500"; // Java naranja
-              case "PHP": return "text-indigo-400"; // PHP azul
-              case "C#": return "text-purple-700"; // C# morado
-              case "Go": return "text-cyan-500"; // Go azul claro
-              case "Ruby": return "text-red-600"; // Ruby rojo
-              case "Kotlin": return "text-purple-500"; // Kotlin morado
-              case "Rust": return "text-amber-700"; // Rust marrón
-              case "Dart": return "text-blue-600"; // Dart azul
-              case "Swift": return "text-orange-400"; // Swift naranja
-              default: return "text-cyan-200";
+              case "JavaScript": return "text-yellow-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Python": return "text-blue-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "TypeScript": return "text-blue-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Java": return "text-orange-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "PHP": return "text-indigo-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "C#": return "text-purple-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Kotlin": return "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Dart": return "text-blue-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              default: return "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
             }
           }
           function getFrameworkColor(framework: string) {
             switch (framework) {
-              case "React.js": return "text-blue-400"; // #61DAFB
-              case "Flask": return "text-gray-200"; // Flask blanco/gris
-              case "Spring Boot": return "text-green-500"; // #6DB33F
-              case "Laravel": return "text-red-500"; // #FF2D20
-              case "Ruby on Rails": return "text-red-600"; // #CC0000
-              case "Next.js": return "text-gray-800"; // #000 (gris oscuro)
-              case "Gin": return "text-cyan-500"; // #00ADD8
-              case "Flutter": return "text-blue-500"; // #02569B
-              case "Jetpack Compose": return "text-blue-400"; // #4285F4
-              case "ASP.NET Core": return "text-purple-700"; // #512BD4
-              case "Ktor": return "text-blue-400"; // #0095D5
-              case "SwiftUI": return "text-orange-400"; // #FA7343
-              case "Java": return "text-orange-500"; // #E76F00
-              case "Actix Web": return "text-gray-600"; // #333
-              case "Rust": return "text-amber-700"; // #DEA584 (marrón)
-              case "PHP": return "text-blue-400"; // #777BB4
-              default: return "text-cyan-300";
+              case "React.js": return "text-cyan-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Flask": return "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Spring Boot": return "text-green-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Laravel": return "text-red-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Next.js": return "text-gray-900 drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]";
+              case "ASP.NET Core": return "text-purple-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Flutter": return "text-blue-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              case "Jetpack Compose": return "text-blue-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
+              default: return "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]";
             }
           }
           return (
