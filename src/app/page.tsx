@@ -1,129 +1,32 @@
 "use client";
 function getFrameworkIcon(framework: string) {
-  switch (framework) {
-    case "React.js":
-      // Official React logo (minimal)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="16" fill="#222"/>
-          <g>
-            <ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2"/>
-            <ellipse rx="16" ry="8" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2"/>
-            <ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2" transform="rotate(60 16 16)"/>
-            <ellipse rx="8" ry="16" cx="16" cy="16" fill="none" stroke="#61DAFB" strokeWidth="2" transform="rotate(120 16 16)"/>
-          </g>
-          <circle cx="16" cy="16" r="3" fill="#61DAFB"/>
-        </svg>
-      );
-    case "Flask":
-      // Official Flask logo (minimal, flask shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#000"/>
-          <path d="M20 10c-2 2-6 8-8 10 2 0 8-6 10-8-1-1-1-2-2-2z" fill="#fff"/>
-          <circle cx="12" cy="22" r="2" fill="#fff"/>
-        </svg>
-      );
-    case "Next.js":
-      // Official Next.js logo (minimal)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#fff"/>
-          <path d="M10 22V10h2v10h-2zm4.5-6.5l5.5 8.5h-2.3l-3.2-5.1V22h-2v-8h2v3.5zm2.5-2.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" fill="#222"/>
-        </svg>
-      );
-    case "Spring Boot":
-      // Official Spring Boot logo (minimal, leaf)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#6DB33F"/>
-          <path d="M16 10c3 0 6 2 6 6s-3 6-6 6-6-2-6-6 3-6 6-6zm0 2c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z" fill="#fff"/>
-        </svg>
-      );
-    case "Laravel":
-      // Official Laravel logo (minimal, L shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#FF2D20"/>
-          <path d="M10 22V10h2v10h8v2H10z" fill="#fff"/>
-        </svg>
-      );
-    case "ASP.NET Core":
-      // Official ASP.NET Core logo (minimal, dot and N)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#512BD4"/>
-          <circle cx="10" cy="22" r="2" fill="#fff"/>
-          <rect x="16" y="12" width="6" height="12" fill="#fff"/>
-        </svg>
-      );
-    case "Gin":
-      // Official Gin logo (minimal, G letter)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#00ADD8"/>
-          <path d="M20 16a4 4 0 1 1-4-4v2a2 2 0 1 0 2 2h2z" fill="#fff"/>
-        </svg>
-      );
-    case "Ruby on Rails":
-      // Official Rails logo (minimal, rails shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#CC0000"/>
-          <rect x="10" y="10" width="4" height="12" fill="#fff"/>
-          <rect x="18" y="10" width="4" height="12" fill="#fff"/>
-          <rect x="14" y="14" width="4" height="8" fill="#fff"/>
-        </svg>
-      );
-    case "Ktor":
-      // Official Ktor logo (minimal, K shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#0095D5"/>
-          <polygon points="10,24 22,10 22,24" fill="#fff"/>
-        </svg>
-      );
-    case "Actix Web":
-      // Official Actix Web logo (minimal, A shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#333"/>
-          <polygon points="16,10 22,24 10,24" fill="#fff"/>
-        </svg>
-      );
-    case "Flutter":
-      // Official Flutter logo (minimal, stylized F)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#02569B"/>
-          <polygon points="10,22 22,10 26,14 14,26" fill="#fff"/>
-        </svg>
-      );
-    case "SwiftUI":
-      // Official SwiftUI logo (minimal, bird shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#FA7343"/>
-          <path d="M10 22c4-2 8-8 12-10-2 4-8 8-12 10zm2-8c2 2 6 4 8 2-2 0-6-2-8-2z" fill="#fff"/>
-        </svg>
-      );
-    case "Jetpack Compose":
-      // Official Jetpack Compose logo (minimal, diamond shape)
-      return (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="16" fill="#4285F4"/>
-          <polygon points="16,8 28,16 16,28 4,16" fill="#fff"/>
-        </svg>
-      );
-    default:
-      return null;
-  }
+  const frameworkMap: Record<string, { file: string; bg: string }> = {
+    "React.js": { file: "r.png", bg: "#222" },
+    "Flask": { file: "flask.svg", bg: "#000" },
+    "Next.js": { file: "nextjs.svg", bg: "#fff" },
+    "Spring Boot": { file: "sb.png", bg: "#6DB33F" },
+    "Laravel": { file: "laravel.png", bg: "#FF2D20" },
+    "ASP.NET Core": { file: "net.png", bg: "#512BD4" },
+    "Flutter": { file: "flutter.png", bg: "#02569B" },
+    "Jetpack Compose": { file: "jetpack.png", bg: "#4285F4" },
+  };
+  const info = frameworkMap[framework];
+  if (!info) return null;
+  return (
+    <Image
+      src={`/img/${info.file}`}
+      alt={`${framework} Logo`}
+      width={44}
+      height={44}
+      style={{ borderRadius: '50%', background: info.bg }}
+      priority
+    />
+  );
 }
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
 const skills = [
-  // "HTML - CSS", // Eliminado por solicitud
   "JavaScript – React.js",
   "Python – Flask",
   "TypeScript – Next.js",
@@ -139,7 +42,7 @@ function getLangIcon(lang: string) {
   const langMap: Record<string, { file: string; bg: string }> = {
     "JavaScript": { file: "js.webp", bg: "#F7DF1E" },
     "Python": { file: "python.png", bg: "#3776AB" },
-    "TypeScript": { file: "tsss.png", bg: "#3178C6" },
+    "TypeScript": { file: "ts.png", bg: "#3178C6" },
     "Java": { file: "javaaa.png", bg: "#007396" },
     "PHP": { file: "php.png", bg: "#777BB4" },
     "C#": { file: "c.jpg", bg: "#512BD4" },
@@ -257,8 +160,8 @@ function SnakeCarousel() {
               style={{ boxSizing: 'border-box', overflow: 'hidden' }}
             >
               {/* Glow animado en el icono, mejor posicionado */}
-              <span className="relative flex items-center justify-center mr-2" style={{width: 32, height: 32}}>
-                <span className="absolute left-0 top-0 w-8 h-8 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
+              <span className="relative flex items-center justify-center mr-2" style={{width: 44, height: 44}}>
+                <span className="absolute left-0 top-0 w-11 h-11 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
                 <span className="relative z-10">{getLangIcon(lang)}</span>
               </span>
               <span className={`${getLangColor(lang)} font-bold drop-shadow-lg flex items-center gap-1`}>
@@ -266,7 +169,10 @@ function SnakeCarousel() {
               </span>
               {framework && (
                 <span className={`${getFrameworkColor(framework)} font-normal flex items-center gap-1 drop-shadow-md`}>
-                  – {framework} {getFrameworkIcon(framework)}
+                  – {framework}
+                  <span className="ml-1 flex items-center" style={{width: 44, height: 44}}>
+                    {getFrameworkIcon(framework)}
+                  </span>
                 </span>
               )}
             </span>
@@ -515,8 +421,8 @@ export default function Home() {
                     key={framework + idx}
                     className="group bg-white/10 border border-blue-200/30 shadow-xl rounded-2xl px-6 py-6 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-pink-400/40 hover:bg-white/20 min-h-[140px] relative overflow-hidden"
                   >
-                    <span className="relative flex items-center justify-center mb-3" style={{width: 48, height: 48}}>
-                      <span className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
+                    <span className="relative flex items-center justify-center mb-3" style={{width: 44, height: 44}}>
+                      <span className="absolute left-0 top-0 w-11 h-11 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 blur-md opacity-30 animate-pulse" />
                       <span className="relative z-10">{getFrameworkIcon(framework)}</span>
                     </span>
                     <span className={`text-lg font-bold drop-shadow-lg flex items-center gap-1 mb-1 ${getFrameworkColor(framework)}`}>
@@ -534,9 +440,3 @@ export default function Home() {
   );
 }
 
-/* Agregar animaciones personalizadas a Tailwind en globals.css o tailwind.config.js:
-.animate-float { animation: float 3s ease-in-out infinite; }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-.animate-gradient { animation: gradientMove 4s ease-in-out infinite; }
-@keyframes gradientMove { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
-*/
