@@ -256,37 +256,52 @@ export default function Home() {
           </div>
           {/* Habilidades blandas */}
           <div className="bg-gradient-to-br from-purple-900/80 via-blue-900/70 to-purple-800/80 rounded-3xl shadow-2xl p-10 flex flex-col items-center hover:scale-[1.06] transition-transform duration-300 border-2 border-purple-400/30 backdrop-blur-xl relative animate-fadein">
-            <span className="mb-4 text-purple-400 drop-shadow-xl animate-float">
-              <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24"><defs><radialGradient id="softGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" stopColor="#a78bfa"/><stop offset="100%" stopColor="#60a5fa"/></radialGradient></defs><path fill="url(#softGrad)" d="M12 2C8.13 2 5 5.13 5 9c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm-1 2h2v6h-2z"/></svg>
-            </span>
-            <h3 className="text-2xl font-bold mb-3 text-white tracking-tight drop-shadow-lg animate-fadein">Habilidades blandas</h3>
-            <div className="flex flex-wrap gap-3 justify-center mt-2">
-              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5s-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                Trabajo en equipo
-              </span>
-              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6.5a2.5 2.5 0 0 0-5 0V8h-2V6.5a2.5 2.5 0 0 0-5 0V8H7V6.5a2.5 2.5 0 0 0-5 0V8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5z"/></svg>
-                Comunicación
-              </span>
-              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-7.07 17.07c.39.39 1.02.39 1.41 0l1.41-1.41c.39-.39.39-1.02 0-1.41A7.978 7.978 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 2.21-.9 4.21-2.35 5.66-.39.39-.39 1.02 0 1.41l1.41 1.41c.39.39 1.02.39 1.41 0A10 10 0 0 0 12 2z"/></svg>
-                Liderazgo
-              </span>
-              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 8c-2.21 0-4 1.79-4 4v4h8v-4c0-2.21-1.79-4-4-4zm0-6C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10z"/></svg>
-                Resolución de problemas
-              </span>
-              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 1 8 8c0 4.41-3.59 8-8 8s-8-3.59-8-8a8 8 0 0 1 8-8zm0 2C8.13 6 5 9.13 5 13c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7z"/></svg>
-                Adaptabilidad
-              </span>
-              <span className="flex items-center gap-2 bg-purple-900/70 text-purple-100 rounded-full px-5 py-2 text-base font-semibold shadow-lg hover:scale-110 hover:shadow-purple-400/40 transition-all duration-300 border border-purple-400/30 backdrop-blur-sm">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
-                Pensamiento crítico
-              </span>
+            <h3 className="text-2xl font-extrabold mb-8 text-center text-white tracking-tight drop-shadow-xl">Habilidades blandas</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+              {/* Tarjeta: Trabajo en equipo */}
+              <div className="flex flex-col items-center bg-white/10 border border-blue-400/30 rounded-2xl px-6 py-8 shadow-2xl backdrop-blur-md hover:shadow-blue-400/40 hover:scale-105 transition-all duration-300 min-h-[160px] relative overflow-hidden">
+                <span className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 shadow-lg animate-pulse">
+                  <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5s-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                </span>
+                <span className="text-lg font-bold text-white text-center drop-shadow-lg">Trabajo en equipo</span>
+              </div>
+              {/* Tarjeta: Comunicación */}
+              <div className="flex flex-col items-center bg-white/10 border border-purple-400/30 rounded-2xl px-6 py-8 shadow-2xl backdrop-blur-md hover:shadow-purple-400/40 hover:scale-105 transition-all duration-300 min-h-[160px] relative overflow-hidden">
+                <span className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-purple-400 via-blue-400 to-pink-400 shadow-lg animate-pulse">
+                  <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M21 6.5a2.5 2.5 0 0 0-5 0V8h-2V6.5a2.5 2.5 0 0 0-5 0V8H7V6.5a2.5 2.5 0 0 0-5 0V8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5z"/></svg>
+                </span>
+                <span className="text-lg font-bold text-white text-center drop-shadow-lg">Comunicación</span>
+              </div>
+              {/* Tarjeta: Liderazgo */}
+              <div className="flex flex-col items-center bg-white/10 border border-pink-400/30 rounded-2xl px-6 py-8 shadow-2xl backdrop-blur-md hover:shadow-pink-400/40 hover:scale-105 transition-all duration-300 min-h-[160px] relative overflow-hidden">
+                <span className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-pink-400 via-purple-400 to-blue-400 shadow-lg animate-pulse">
+                  <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M12 2a10 10 0 0 0-7.07 17.07c.39.39 1.02.39 1.41 0l1.41-1.41c.39-.39.39-1.02 0-1.41A7.978 7.978 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 2.21-.9 4.21-2.35 5.66-.39.39-.39 1.02 0 1.41l1.41 1.41c.39.39 1.02.39 1.41 0A10 10 0 0 0 12 2z"/></svg>
+                </span>
+                <span className="text-lg font-bold text-white text-center drop-shadow-lg">Liderazgo</span>
+              </div>
+              {/* Tarjeta: Resolución de problemas */}
+              <div className="flex flex-col items-center bg-white/10 border border-cyan-400/30 rounded-2xl px-6 py-8 shadow-2xl backdrop-blur-md hover:shadow-cyan-400/40 hover:scale-105 transition-all duration-300 min-h-[160px] relative overflow-hidden">
+                <span className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-cyan-400 via-blue-400 to-purple-400 shadow-lg animate-pulse">
+                  <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M12 8c-2.21 0-4 1.79-4 4v4h8v-4c0-2.21-1.79-4-4-4zm0-6C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10z"/></svg>
+                </span>
+                <span className="text-lg font-bold text-white text-center drop-shadow-lg">Resolución de problemas</span>
+              </div>
+              {/* Tarjeta: Adaptabilidad */}
+              <div className="flex flex-col items-center bg-white/10 border border-yellow-300/30 rounded-2xl px-6 py-8 shadow-2xl backdrop-blur-md hover:shadow-yellow-300/40 hover:scale-105 transition-all duration-300 min-h-[160px] relative overflow-hidden">
+                <span className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-yellow-300 via-pink-400 to-blue-400 shadow-lg animate-pulse">
+                  <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M12 4a8 8 0 0 1 8 8c0 4.41-3.59 8-8 8s-8-3.59-8-8a8 8 0 0 1 8-8zm0 2C8.13 6 5 9.13 5 13c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7z"/></svg>
+                </span>
+                <span className="text-lg font-bold text-white text-center drop-shadow-lg">Adaptabilidad</span>
+              </div>
+              {/* Tarjeta: Pensamiento crítico */}
+              <div className="flex flex-col items-center bg-white/10 border border-purple-400/30 rounded-2xl px-6 py-8 shadow-2xl backdrop-blur-md hover:shadow-purple-400/40 hover:scale-105 transition-all duration-300 min-h-[160px] relative overflow-hidden">
+                <span className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-purple-400 via-blue-400 to-pink-400 shadow-lg animate-pulse">
+                  <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                </span>
+                <span className="text-lg font-bold text-white text-center drop-shadow-lg">Pensamiento crítico</span>
+              </div>
             </div>
-            <div className="w-20 h-1 bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400 rounded-full mt-4 mb-2 opacity-80 animate-gradient" />
+            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full mt-8 mb-2 opacity-80 animate-gradient" />
           </div>
         </div>
         {/* Sección especial para HTML y CSS */}
